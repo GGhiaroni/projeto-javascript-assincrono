@@ -16,8 +16,23 @@ module.exports = {
       },
       fontFamily: {
         fonteTexto: "var(--font-family)",
-      }
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    // Plugin para criar variáveis CSS no Tailwind (opcional)
+    function ({ addBase }) {
+      addBase({
+        ":root": {
+          "--background-color": "#00090E",
+          "--text-color": "#E1E1E1",
+          "--primary-color": "#81FE88",
+          "--secondary-color": "#888888",
+          "--tag-color": "#171D1F",
+          "--font-family": "'Prompt', sans-serif",
+          "--itens-background": "#171D1F",
+        },
+      });
+    },
+  ],
 };
