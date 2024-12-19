@@ -13,8 +13,8 @@
     <title>CodeConnect</title>
 </head>
 
-<body>
-    <aside>
+<body class="bg-corBackground text-corTexto font-fonteTexto flex h-screen gap-[27px] py-14">
+    <aside class="bg-corItensBackground rounded-[10px] h-full py-10 px-4 text-center">
         <img src="./img/Logo.svg" alt="logo CodeConnect">
         <nav>
             <ul class="lista-links flex flex-col gap-10 mt-20 items-center list-none">
@@ -48,6 +48,47 @@
             </ul>
         </nav>
     </aside>
+
+    <main class="bg-corItensBackground rounded-[10px] p-8 flex gap-6">
+        <div>
+            <div>
+                <img src="./img/imagem1.png" alt="">
+            </div>
+            <button>Carregar imagem</button>
+            <div>
+                <p>image_projeto.png</p>
+                <img src="./img/close.svg" alt="ícone fechar">
+            </div>
+        </div>
+        <div>
+             <h2 class="text-[26px] mb-10 font-semibold">Novo projeto</h2>
+              <form action="" class="flex flex-col gap-6">
+                <div>
+                    <label for="nome">Nome do projeto</label>
+                     <input type="text" id="nome" name="nome">
+                </div>
+                <div>
+                    <label for="descricao">Descrição</label>
+                     <textarea id="descricao" name="descricao">
+                </div>
+                <div>
+                    <label for="categoria">Tags</label>
+                     <input type="text" id="categoria" name="categoria">
+                </div>
+                <ul>
+                    <li>
+                        <p>Front-end</p>
+                        <img src="./img/close-black.svg" alt="">
+                    </li>
+                </ul>
+                <div>
+                    <button>Descartar</button>
+                    <button>Publicar</button>
+                </div>
+              </form>
+        </div>
+    </main>
+
     <script src="script.js"></script>
 </body>
 

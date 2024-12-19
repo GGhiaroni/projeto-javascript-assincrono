@@ -18,24 +18,6 @@
     padding: 0;
 }
 
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: var(--font-family);
-    display: flex;
-    height: 100vh;
-    gap: 27px;
-    padding: 56px 0;
-}
-
-aside {
-    background-color: var(--itens-background);
-    border-radius: 10px;
-    height: 100%;
-    padding: 40px 16px;
-    text-align: center;
-}
-
 .lista-links li a {
     display: flex;
     flex-direction: column;
@@ -43,4 +25,11 @@ aside {
     align-items: center;
     text-decoration: none;
     font-size: 20px;
+}
+
+form div label {
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 8px;
 }
