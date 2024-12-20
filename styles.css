@@ -59,3 +59,17 @@
     transform: translateY(-50%);
     margin-left: 8px;
 }
+
+.botao-upload::after {
+    content: "";
+    background-image: url("../img/upload.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 8px
+}
