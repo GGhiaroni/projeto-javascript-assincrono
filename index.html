@@ -17,9 +17,9 @@
     <aside class="bg-corItensBackground rounded-[10px] h-full py-10 px-4 text-center">
         <img src="./img/Logo.svg" alt="logo CodeConnect">
         <nav>
-            <ul class="lista-links flex flex-col gap-10 mt-20 items-center list-none">
+            <ul class="lista-links flex flex-col gap-10 mt-20 items-center list-none [&_li_a]:flex [&_li_a]:flex-col [&_li_a]:gap-2 [&_li_a]:items-center [&_li_a]:text-corSecundaria [&_li_a]:text-[22px] [&_li_a]:no-underline">
                 <li>
-                    <a href="#" class="link-destaque text-corPrimaria border-2 border-solid border-corPrimaria py-3 px-7 rounded-lg">Publicar</a>
+                    <a href="#" class="link-destaque text-corPrimaria border-2 border-solid border-corPrimaria py-3 px-7 rounded-lg first:text-corPrimaria">Publicar</a>
                 </li>
                 <li class="text-corSecundaria">
                     <a href="#" class="">
@@ -64,26 +64,30 @@
              <h2 class="text-[26px] mb-10 font-semibold">Novo projeto</h2>
               <form action="" class="flex flex-col gap-6">
                 <div>
-                    <label for="nome">Nome do projeto</label>
-                     <input type="text" id="nome" name="nome">
+                    <label for="nome" class="text-[18px] font-normal block mb-2">Nome do projeto</label>
+                     <input type="text" id="nome" name="nome" class="w-full py-2 px-4 bg-corSecundaria border-none rounded-md font-fonteTexto leading-[22.5px] h-[39px]">
                 </div>
                 <div>
-                    <label for="descricao">Descrição</label>
-                     <textarea id="descricao" name="descricao">
+                    <label for="descricao" class="text-[18px] font-normal block mb-2">Descrição</label>
+                     <textarea id="descricao" name="descricao" class="w-full py-2 px-4 bg-corSecundaria border-none rounded-md font-fonteTexto leading-[22.5px] h-[161px]"></textarea>
                 </div>
                 <div>
-                    <label for="categoria">Tags</label>
-                     <input type="text" id="categoria" name="categoria">
+                    <label for="categoria" class="text-[18px] font-normal block mb-2">Tags</label>
+                     <input type="text" id="categoria" name="categoria" class="w-full py-2 px-4 bg-corSecundaria border-none rounded-md font-fonteTexto leading-[22.5px] h-[39px]">
                 </div>
-                <ul>
-                    <li>
+                <ul class="flex flex-wrap gap-4">
+                    <li class="flex bg-corSecundaria text-corBackground gap-2 py-1 px-2 rounded-md">
                         <p>Front-end</p>
                         <img src="./img/close-black.svg" alt="">
                     </li>
+                    <li class="flex bg-corSecundaria text-corBackground gap-2 py-1 px-2 rounded-md">
+                        <p>Back-end</p>
+                        <img src="./img/close-black.svg" alt="">
+                    </li>
                 </ul>
-                <div>
-                    <button>Descartar</button>
-                    <button>Publicar</button>
+                <div class="flex gap-6 justify-between">
+                    <button class="botao-descartar w-6/12 pt-3 pr-8 pb-3 pl-3 text-center rounded-lg font-fonteTexto text-lg font-medium">Descartar</button>
+                    <button class="botao-publicar w-6/12 pt-3 pr-8 pb-3 pl-3 text-center rounded-lg font-fonteTexto text-lg font-medium">Publicar</button>
                 </div>
               </form>
         </div>
