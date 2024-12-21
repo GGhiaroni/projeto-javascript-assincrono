@@ -83,18 +83,6 @@ inputTags.addEventListener('keypress', async (e) => {
 
 const botaoPublicar = document.querySelector(".botao-publicar");
 
-botaoPublicar.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    const nomeDoProjeto = document.getElementById("nome").value;
-    const descricaoDoProjeto = document.getElementById("descricao").value;
-    const tagsDoProjeto = Array.from(listaDeTags.querySelectorAll("p")).map((tag) => tag.textContent);
-
-    console.log(nomeDoProjeto);
-    console.log(descricaoDoProjeto);
-    console.log(tagsDoProjeto);
-});
-
 async function publicarProjeto (nomeDoProjeto, descricaoDoProjeto, tagsDoProjeto) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -108,3 +96,39 @@ async function publicarProjeto (nomeDoProjeto, descricaoDoProjeto, tagsDoProjeto
         }, 2000);
     });
 }
+
+botaoPublicar.addEventListener('click', async (e) => {
+    e.preventDefault();
+
+    const nomeDoProjeto = document.getElementById("nome").value;
+    const descricaoDoProjeto = document.getElementById("descricao").value;
+    const tagsDoProjeto = Array.from(listaDeTags.querySelectorAll("p")).map((tag) => tag.textContent);
+
+    try {
+        const resultado = await publicarProjeto(nomeDoProjeto, descricaoDoProjeto, tagsDoProjeto);
+        console.log(resultado);
+        alert("Deu tudo certo na publicação do projeto!");
+
+        const formulario = document.getElementById("formulario");
+        formulario.reset();
+        listaDeTags.innerHTML = "";
+    } catch (error) {
+        console.log("Um erro foi gerado na publicação do projeto: ", error);
+        alert("Houve um erro com a publicação do projeto!");
+    }
+});
+
+const botaoDescartar = document.querySelector(".botao-descartar");
+
+botaoDescartar.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const formulario = document.getElementById("formulario");
+    formulario.reset();
+
+    imagemProjeto.src = "./img/imagem1.png";
+    nomeProjeto.textContent = "imagem_projeto.png";
+
+    listaDeTags.innerHTML = "";
+});
+
