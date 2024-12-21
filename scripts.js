@@ -47,8 +47,16 @@ inputTags.addEventListener('keypress', (e) => {
         if (tagTexto !== "") {
             const novaTag = document.createElement("li");
             novaTag.classList.add("flex", "bg-corSecundaria", "text-corBackground", "gap-2", "py-1", "px-2", "rounded-md");
-            novaTag.innerHTML = `<p>${tagTexto}</p> <img src="./img/close-black.svg"/>`;
+            novaTag.innerHTML = `<p>${tagTexto}</p> <img src="./img/close-black.svg" class="remover-tag hover:cursor-pointer"/>`;
             listaDeTags.appendChild(novaTag);
+            inputTags.value = "";
         }
+    }
+});
+
+listaDeTags.addEventListener('click', (e) => {
+    if (e.target.classList.contains("remover-tag")) {
+        const elementoASerRemovido = e.target.parentElement;
+        listaDeTags.removeChild(elementoASerRemovido);
     }
 });
