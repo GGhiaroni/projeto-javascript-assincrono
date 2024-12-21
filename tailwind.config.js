@@ -19,6 +19,16 @@ module.exports = {
       },
     },
   },
+  safelist: [
+    "flex",
+    "bg-corSecundaria",
+    "text-corBackground",
+    "gap-2",
+    "py-1",
+    "px-2",
+    "rounded-md",
+    "hover:cursor-pointer",
+  ],
   plugins: [
     // Plugin para criar variáveis CSS no Tailwind (opcional)
     function ({ addBase }) {
