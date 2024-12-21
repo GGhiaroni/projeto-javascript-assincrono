@@ -19,3 +19,20 @@ function lerConteudoArquivo(arquivo) {
         leitor.readAsDataURL(arquivo);
     });
 };
+
+const imagemProjeto = document.getElementById("imagem-projeto");
+const nomeProjeto = document.getElementById("nome-projeto");
+
+uploadInput.addEventListener('change', async (e) => {
+    const arquivoRecebido = e.target.files[0];
+
+    if (arquivoRecebido) {
+        try {
+            const conteudoDoArquivo = await lerConteudoArquivo(arquivoRecebido);
+            imagemProjeto.src = conteudoDoArquivo.url;
+            nomeProjeto.textContent = conteudoDoArquivo.nome;
+        } catch (error) {
+            console.error("Erro ao subir a imagem.");
+        }
+    }
+});
